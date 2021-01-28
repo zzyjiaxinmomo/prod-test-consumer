@@ -9,7 +9,6 @@ module.exports = (_, argv) => ({
         ? "http://localhost:8081/"
         : "https://prod-test-consumer-two.vercel.app/",
   },
-
   resolve: {
     extensions: [".jsx", ".js", ".json"],
   },
@@ -46,8 +45,10 @@ module.exports = (_, argv) => ({
       name: "consumer",
       filename: "remoteEntry.js",
       remotes: {
-        header:
-          "header@https://prod-test-header-nine.vercel.app/remoteEntry.js",
+        generalui:
+          argv.mode === "development"
+            ? "generalui@http://localhost:8080/remoteEntry.js"
+            : "generalui@https://prod-test-header-nine.vercel.app/remoteEntry.js",
       },
       exposes: {},
       shared: {
