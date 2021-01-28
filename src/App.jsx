@@ -1,13 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Header from "generalui/Header";
-import Input from "generalui/Input";
+import DatePicker from "generalui/DatePicker";
 import "./index.css";
 
 const App = () => (
   <div>
-    <Header />
-    <Input />
+    <DatePicker />
     Hi there, I'm React from Webpack 5.Consumer app
   </div>
 );
